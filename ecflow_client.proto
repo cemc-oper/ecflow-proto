@@ -2,6 +2,11 @@ syntax = "proto3";
 
 package ecflow_client;
 
+message ResponseStatus{
+    bool has_error = 1;
+    string error_string = 2;
+}
+
 message StatusRequest{
     string owner = 1;
     string repo = 2;
@@ -14,6 +19,7 @@ message StatusRecordsResponse{
     string repo = 2;
     int64 collected_timestamp = 3;
     map<string, string> status_map = 4;
+    ResponseStatus response_status = 5;
 }
 
 message StatusResponse{
@@ -21,9 +27,27 @@ message StatusResponse{
     string repo = 2;
     int64 collected_timestamp = 3;
     string status = 4;
+    ResponseStatus response_status = 5;
+}
+
+message NodeRequest{
+    string owner = 1;
+    string repo = 2;
+    string host = 3;
+    string port = 4;
+    string path = 5;
+}
+
+message NodeResponse{
+    string owner = 1;
+    string repo = 2;
+    string path = 3;
+    string node = 4;
+    ResponseStatus response_status = 5;
 }
 
 service EcflowClientService{
     rpc CollectStatusRecords(StatusRequest) returns (StatusRecordsResponse){}
     rpc CollectStatus(StatusRequest) returns (StatusResponse){}
+    rpc CollectNode(NodeRequest) returns (NodeResponse){}
 }
