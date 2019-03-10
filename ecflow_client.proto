@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package ecflow_client;
+
+message StatusRequest{
+    string owner = 1;
+    string repo = 2;
+    string host = 3;
+    string port = 4;
+}
+
+message StatusRecordsResponse{
+    string owner = 1;
+    string repo = 2;
+    int64 collected_timestamp = 3;
+    map<string, string> status_map = 4;
+}
+
+message StatusResponse{
+    string owner = 1;
+    string repo = 2;
+    int64 collected_timestamp = 3;
+    string status = 4;
+}
+
+service EcflowClientService{
+    rpc CollectStatusRecords(StatusRequest) returns (StatusRecordsResponse){}
+    rpc CollectStatus(StatusRequest) returns (StatusResponse){}
+}
