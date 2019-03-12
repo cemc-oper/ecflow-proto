@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package ecflow_client;
 
+option go_package = "ecflowclient";
+
 message ResponseStatus{
     bool has_error = 1;
     string error_string = 2;
