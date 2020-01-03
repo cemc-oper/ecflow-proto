@@ -24,6 +24,14 @@ cd build/go
 protoc -I ../../ ../../ecflow_client.proto --go_out=plugins=grpc:.
 ```
 
+## python
+
+```bash
+mkdir -p build/python
+cd build/python
+protoc -I ../../ ../../ecflow_client.proto --python_out=. 
+```
+
 # LICENSE
 
 Copyright &copy; 2019, Perilla Roc.
