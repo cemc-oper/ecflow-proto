@@ -34,6 +34,6 @@ protoc -I ../../ ../../ecflow_client.proto --python_out=.
 
 # LICENSE
 
-Copyright &copy; 2019, Perilla Roc.
+Copyright &copy; 2019-2020, Perilla Roc.
 
 `ecflow-proto` is licensed under [the MIT License](./LICENSE)
