@@ -29,7 +29,7 @@ protoc -I ../../ ../../ecflow_client.proto --go_out=plugins=grpc:.
 ```bash
 mkdir -p build/python
 cd build/python
-protoc -I ../../ ../../ecflow_client.proto --python_out=. 
+python -m grpc_tools.protoc -I ../../ ../../ecflow_client.proto --python_out=. --grpc_python_out=.
 ```
 
 # LICENSE
