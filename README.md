@@ -1,9 +1,9 @@
 # ecflow-proto
 
-Protobuf for ecflow gRPC client using by:
+Protobuf protocols for ecflow gRPC client using by:
 
-- perillaroc/ecflow-client-cpp
-- perillaroc/ecflow-client-go
+- [nwpc-oper/ecflow-client-cpp](https://github.com/nwpc-oper/ecflow-client-cpp)
+- [nwpc-oper/ecflow-client-go](https://github.com/nwpc-oper/ecflow-client-cpp)
 
 # Building
 
@@ -34,6 +34,6 @@ python -m grpc_tools.protoc -I ../../ ../../ecflow_client.proto --python_out=. -
 
 # LICENSE
 
-Copyright &copy; 2019-2020, Perilla Roc.
+Copyright &copy; 2019-2020, Perilla Roc at nwpc-oper.
 
 `ecflow-proto` is licensed under [the MIT License](./LICENSE)
